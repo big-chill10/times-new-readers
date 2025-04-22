@@ -1,26 +1,78 @@
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>times-new-tales</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Times New Tales</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Times New Tales</div>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#articles">Articles</a>
+                <a href="#stories">Stories</a>
+                <a href="#poems">Poems</a>
+            </div>
+            <button class="menu-btn">☰</button>
+        </nav>
+    </header>
 
-    <meta property="og:title" content="times-new-tales" />
-    <meta property="og:description" content="Lovable Generated Project" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <main>
+        <section class="hero">
+            <h1>Times New Readers</h1>
+            <p>Discover thought-provoking articles, captivating stories, and beautiful poetry from writers around the world.</p>
+            <a href="#articles" class="cta-button">Start Reading</a>
+        </section>
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-  </head>
+        <section class="featured">
+            <h2>Featured Articles</h2>
+            <div class="article-grid">
+                <div class="article-card">
+                    <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485" alt="Tech Article">
+                    <div class="card-content">
+                        <span class="tag">Technology</span>
+                        <h3>The Evolution of Machine Learning</h3>
+                        <p>A comprehensive look at how machine learning has transformed over the decades.</p>
+                    </div>
+                </div>
+                <!-- More article cards can be added here -->
+            </div>
+        </section>
 
-  <body>
-    <div id="root"></div>
-    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+        <section class="newsletter">
+            <h2>Join Our Newsletter</h2>
+            <p>Subscribe to receive the latest articles, stories, and poems directly in your inbox.</p>
+            <form id="newsletter-form">
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Times New Readers</h3>
+                <p>A platform dedicated to bringing you thoughtful articles, captivating stories, and beautiful poetry.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#home">Home</a>
+                <a href="#articles">Articles</a>
+                <a href="#stories">Stories</a>
+                <a href="#poems">Poems</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Times New Readers. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>
