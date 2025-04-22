@@ -1,17 +1,37 @@
-
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { Menu, Search, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { cn } from '@/lib/utils';
-import { useNavigate } from 'react-router-dom';
+import { supabase } from '@/integrations/supabase/client';
+import { User } from '@supabase/supabase-js';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [user, setUser] = useState<User | null>(null);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    // Check current session
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setUser(session?.user ?? null);
+    });
+
+    // Listen for auth changes
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      setUser(session?.user ?? null);
+    });
+
+    return () => subscription.unsubscribe();
+  }, []);
+
+  const handleSignOut = async () => {
+    await supabase.auth.signOut();
+    navigate('/');
+  };
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const toggleSearch = () => setIsSearchOpen(!isSearchOpen);
@@ -73,7 +93,7 @@ const Header = () => {
             </Link>
           </nav>
 
-          {/* Desktop Search and Menu Button */}
+          {/* Desktop Search and Auth Buttons */}
           <div className="hidden md:flex items-center space-x-4">
             <form onSubmit={handleSearchSubmit} className="relative">
               <Input
@@ -85,11 +105,15 @@ const Header = () => {
               />
               <Search className="absolute left-2 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
             </form>
-            <Button variant="outline" className="ml-4 bg-reader-accent text-reader-dark hover:bg-reader-accent/80">
-              <Link to="/" className="flex items-center">
-                Home
-              </Link>
-            </Button>
+            {user ? (
+              <Button variant="outline" onClick={handleSignOut} className="ml-4">
+                Sign Out
+              </Button>
+            ) : (
+              <Button variant="outline" className="ml-4">
+                <Link to="/auth">Sign In</Link>
+              </Button>
+            )}
           </div>
 
           {/* Mobile Menu and Search Buttons */}
