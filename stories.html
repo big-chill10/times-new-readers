@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Times New Tales</title>
+    <title>Stories - Times New Tales</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -23,39 +23,48 @@
     </header>
 
     <main>
-        <section class="hero">
-            <h1>Welcome to Times New Tales</h1>
-            <p>Discover thought-provoking articles, captivating stories, and beautiful poetry from writers around the world.</p>
-            <a href="#featured" class="cta-button">Start Reading</a>
+        <section class="hero story-hero">
+            <h1>Stories</h1>
+            <p>Immerse yourself in captivating narratives from talented writers across genres.</p>
         </section>
 
-        <section id="featured" class="featured">
-            <h2>Featured Content</h2>
+        <section class="featured-story">
+            <h2>Story of the Week</h2>
+            <div class="story-highlight">
+                <h3>The Glass Butterfly</h3>
+                <p class="author">By Amelia Parker</p>
+                <div class="story-excerpt">
+                    <p>The butterfly arrived on the first day of spring, its wings catching the sunlight as it landed on my windowsill. Unlike any butterfly I'd ever seen, its wings appeared to be made of the finest stained glass...</p>
+                    <a href="#" class="read-more">Continue Reading →</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="story-grid">
+            <h2>Recent Stories</h2>
             <div class="article-grid">
                 <div class="article-card">
-                    <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485" alt="Tech Article">
+                    <img src="https://images.unsplash.com/photo-1509023464722-18d996393ca8" alt="Story">
                     <div class="card-content">
-                        <span class="tag">Technology</span>
-                        <h3>The Evolution of Machine Learning</h3>
-                        <p>A comprehensive look at how machine learning has transformed over the decades.</p>
-                        <a href="articles.html" class="read-more">Read More →</a>
+                        <span class="tag">Historical Fiction</span>
+                        <h3>The Clockmaker's Daughter</h3>
+                        <p>A tale of time, loss, and the magical mechanics that bind our lives together.</p>
                     </div>
                 </div>
                 <div class="article-card">
-                    <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a" alt="Poetry">
+                    <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401" alt="Story">
                     <div class="card-content">
-                        <span class="tag">Poetry</span>
-                        <h3>The Art of Modern Poetry</h3>
-                        <p>Exploring contemporary poetic expressions and their impact on modern literature.</p>
-                        <a href="poems.html" class="read-more">Read More →</a>
+                        <span class="tag">Science Fiction</span>
+                        <h3>Starlight and Shadow</h3>
+                        <p>A young astronomer discovers a mysterious signal from a distant galaxy that changes everything.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <section class="newsletter">
-            <h2>Join Our Newsletter</h2>
-            <p>Subscribe to receive the latest articles, stories, and poems directly in your inbox.</p>
+            <h2>Never Miss a Story</h2>
+            <p>Subscribe to receive the latest stories directly in your inbox.</p>
             <form id="newsletter-form">
                 <input type="email" placeholder="Your email address" required>
                 <button type="submit">Subscribe</button>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Times New Tales</title>
+    <title>Articles - Times New Tales</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -23,39 +23,46 @@
     </header>
 
     <main>
-        <section class="hero">
-            <h1>Welcome to Times New Tales</h1>
-            <p>Discover thought-provoking articles, captivating stories, and beautiful poetry from writers around the world.</p>
-            <a href="#featured" class="cta-button">Start Reading</a>
+        <section class="hero article-hero">
+            <h1>Articles</h1>
+            <p>Explore our collection of in-depth articles across various subjects.</p>
         </section>
 
-        <section id="featured" class="featured">
-            <h2>Featured Content</h2>
+        <section class="categories">
+            <h2>Categories</h2>
+            <div class="category-grid">
+                <a href="#technology" class="category-card">Technology</a>
+                <a href="#science" class="category-card">Science</a>
+                <a href="#knowledge" class="category-card">Knowledge</a>
+                <a href="#history" class="category-card">History</a>
+            </div>
+        </section>
+
+        <section id="technology" class="article-section">
+            <h2>Technology Articles</h2>
             <div class="article-grid">
                 <div class="article-card">
-                    <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485" alt="Tech Article">
+                    <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb" alt="Tech Article">
                     <div class="card-content">
                         <span class="tag">Technology</span>
-                        <h3>The Evolution of Machine Learning</h3>
-                        <p>A comprehensive look at how machine learning has transformed over the decades.</p>
-                        <a href="articles.html" class="read-more">Read More →</a>
+                        <h3>The Future of Quantum Computing</h3>
+                        <p>How quantum computers will revolutionize everything from medicine to cryptography.</p>
                     </div>
                 </div>
                 <div class="article-card">
-                    <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a" alt="Poetry">
+                    <img src="https://images.unsplash.com/photo-1639322537228-f710d846310a" alt="Blockchain">
                     <div class="card-content">
-                        <span class="tag">Poetry</span>
-                        <h3>The Art of Modern Poetry</h3>
-                        <p>Exploring contemporary poetic expressions and their impact on modern literature.</p>
-                        <a href="poems.html" class="read-more">Read More →</a>
+                        <span class="tag">Technology</span>
+                        <h3>Understanding Blockchain</h3>
+                        <p>A clear explanation of how blockchain works and its potential beyond cryptocurrency.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <section class="newsletter">
-            <h2>Join Our Newsletter</h2>
-            <p>Subscribe to receive the latest articles, stories, and poems directly in your inbox.</p>
+            <h2>Stay Updated</h2>
+            <p>Subscribe to receive the latest articles directly in your inbox.</p>
             <form id="newsletter-form">
                 <input type="email" placeholder="Your email address" required>
                 <button type="submit">Subscribe</button>
